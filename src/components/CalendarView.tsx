@@ -75,7 +75,7 @@ export function CalendarView({ selectedChild, onEditEvent }: CalendarViewProps) 
                 </div>
 
                 {/* Days Grid */}
-                <div className="flex-1 grid grid-cols-7 grid-rows-6 gap-2 overflow-y-auto pr-1">
+                <div className="flex-1 grid grid-cols-7 gap-2 overflow-y-auto pr-1 pb-12">
                     {calendarDays.map((day) => {
                         const dayEvents = filteredEvents.filter(e => isSameDay(e.startDate, day));
                         const isCurrentMonth = isSameMonth(day, monthStart);
@@ -86,7 +86,7 @@ export function CalendarView({ selectedChild, onEditEvent }: CalendarViewProps) 
                                 key={day.toISOString()}
                                 onClick={() => setSelectedDate(day)}
                                 className={cn(
-                                    "relative rounded-xl md:rounded-2xl p-1 transition-all flex flex-col items-center justify-start pt-2 gap-1 min-h-[5.5rem] md:min-h-[7rem]",
+                                    "relative rounded-xl md:rounded-2xl p-1 transition-all flex flex-col items-center justify-start pt-2 gap-1 min-h-[6.5rem] md:min-h-[7rem]",
                                     isCurrentMonth ? "hover:bg-gray-50 dark:hover:bg-zinc-800/50" : "opacity-30",
                                     // Removed ring/bg from generic selection on the cell
                                 )}
