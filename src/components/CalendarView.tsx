@@ -75,7 +75,7 @@ export function CalendarView({ selectedChild, onEditEvent }: CalendarViewProps) 
                 </div>
 
                 {/* Days Grid - Fixed Rows for no scroll */}
-                <div className="flex-1 grid grid-cols-7 grid-rows-6 gap-2 h-full">
+                <div className="flex-1 grid grid-cols-7 grid-rows-6 gap-2 h-full pb-6 box-border">
                     {calendarDays.map((day) => {
                         const dayEvents = filteredEvents.filter(e => isSameDay(e.startDate, day));
                         const isCurrentMonth = isSameMonth(day, monthStart);
@@ -124,7 +124,7 @@ export function CalendarView({ selectedChild, onEditEvent }: CalendarViewProps) 
             </div>
 
             {/* Right Column: Selected Day Agenda */}
-            <div className="lg:w-[400px] flex flex-col bg-gray-50 dark:bg-zinc-900/50 rounded-[2rem] border border-gray-200 dark:border-zinc-800 lg:border-none lg:bg-transparent lg:dark:bg-transparent overflow-hidden h-[400px] lg:h-auto shrink-0 relative">
+            <div className="lg:w-[400px] flex flex-col bg-gray-50 dark:bg-zinc-900/50 rounded-[2rem] border border-gray-200 dark:border-zinc-800 lg:border-none lg:bg-transparent lg:dark:bg-transparent overflow-hidden h-[35%] md:h-[400px] lg:h-auto shrink-0 relative">
                 <div className="p-6 pb-0 flex items-center justify-between mb-4 sticky top-0 z-10">
                     <div>
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white capitalize">
