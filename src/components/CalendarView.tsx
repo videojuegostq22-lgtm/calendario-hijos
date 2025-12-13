@@ -75,7 +75,7 @@ export function CalendarView({ selectedChild, onEditEvent }: CalendarViewProps) 
                 </div>
 
                 {/* Days Grid - Fixed Rows for no scroll */}
-                <div className="flex-1 grid grid-cols-7 grid-rows-6 gap-2 h-full pb-6 box-border">
+                <div className="flex-1 grid grid-cols-7 grid-rows-6 gap-2 h-full pb-6 md:pb-0 box-border">
                     {calendarDays.map((day) => {
                         const dayEvents = filteredEvents.filter(e => isSameDay(e.startDate, day));
                         const isCurrentMonth = isSameMonth(day, monthStart);
