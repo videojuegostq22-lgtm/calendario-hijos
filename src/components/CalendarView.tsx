@@ -80,7 +80,6 @@ export function CalendarView({ selectedChild, onEditEvent }: CalendarViewProps) 
                         const dayEvents = filteredEvents.filter(e => isSameDay(e.startDate, day));
                         const isCurrentMonth = isSameMonth(day, monthStart);
                         const isSelected = isSameDay(day, selectedDate);
-                        const isTodayDate = isToday(day);
 
                         return (
                             <button
@@ -89,17 +88,16 @@ export function CalendarView({ selectedChild, onEditEvent }: CalendarViewProps) 
                                 className={cn(
                                     "relative rounded-xl md:rounded-2xl p-1 transition-all flex flex-col items-center justify-start pt-2 gap-1",
                                     isCurrentMonth ? "hover:bg-gray-50 dark:hover:bg-zinc-800/50" : "opacity-30",
-                                    isSelected
-                                        ? "ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-zinc-900 bg-indigo-50 dark:bg-indigo-900/10"
-                                        : "bg-transparent",
-                                    !isCurrentMonth && isSelected && "opacity-50"
+                                    // Removed ring/bg from generic selection on the cell
                                 )}
                             >
                                 <span className={cn(
-                                    "text-sm font-semibold w-8 h-8 flex items-center justify-center rounded-full transition-colors",
-                                    isTodayDate
-                                        ? "bg-indigo-600 text-white shadow-md shadow-indigo-500/30"
-                                        : isSelected ? "text-indigo-600 dark:text-indigo-400" : "text-gray-700 dark:text-gray-300"
+                                    "text-sm font-semibold w-8 h-8 flex items-center justify-center rounded-full transition-all",
+                                    isSelected
+                                        ? "bg-indigo-600 text-white shadow-md shadow-indigo-500/30 scale-110"
+                                        : isToday(day)
+                                            ? "text-indigo-600 dark:text-indigo-400 font-extrabold bg-indigo-50 dark:bg-indigo-900/20"
+                                            : "text-gray-700 dark:text-gray-300"
                                 )}>
                                     {format(day, 'd')}
                                 </span>
