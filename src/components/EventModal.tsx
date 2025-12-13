@@ -112,7 +112,7 @@ export function EventModal({ isOpen, onClose, eventToEdit }: EventModalProps) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center sm:p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="bg-black sm:bg-zinc-950 w-full h-full sm:h-auto sm:max-w-md sm:rounded-[2rem] flex flex-col overflow-hidden sm:shadow-2xl sm:border border-zinc-800">
+            <div className="bg-black sm:bg-zinc-950 w-full h-full sm:h-auto sm:max-h-[85vh] sm:max-w-md sm:rounded-[2rem] flex flex-col overflow-hidden sm:shadow-2xl sm:border border-zinc-800">
 
                 {/* Header (iOS Style) */}
                 <div className="flex items-center justify-between px-4 py-4 bg-black/50 backdrop-blur-md sticky top-0 z-10 shrink-0">
